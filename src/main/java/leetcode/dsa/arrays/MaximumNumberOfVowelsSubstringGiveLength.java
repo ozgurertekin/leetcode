@@ -18,15 +18,14 @@ public class MaximumNumberOfVowelsSubstringGiveLength {
             }
         }
         ans = curr;
-
         for (int i = k; i < s.length(); i++) {
             if (vowels.contains(s.charAt(i - k))) {
-                ans = Math.max(ans, curr--);
+                curr--;
             }
             if (vowels.contains(s.charAt(i))) {
                 curr++;
-                ans = Math.max(ans, curr);
             }
+            ans = Math.max(ans, curr);
         }
         return ans;
     }
